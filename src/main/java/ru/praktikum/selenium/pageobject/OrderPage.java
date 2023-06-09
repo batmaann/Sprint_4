@@ -41,14 +41,12 @@ public class OrderPage {
     }
 
 
-    public void sendValue() {
-        webDriver.findElement(fieldName).sendKeys("иван");//ввод имени
-        webDriver.findElement(fieldLastname).sendKeys("Иваныч");//ввод фамилии
-        webDriver.findElement(fieldAddress).sendKeys(
-                "обл Московская рп Дрожжино, ул Южная, д. 3, к. 6"
-        );//ввод адреса
+    public void sendValue(String name, String lastName, String address, String phone) {
+        webDriver.findElement(fieldName).sendKeys(name);//ввод имени
+        webDriver.findElement(fieldLastname).sendKeys(lastName);//ввод фамилии
+        webDriver.findElement(fieldAddress).sendKeys(address);//ввод адреса
         station();
-        webDriver.findElement(fieldNumber).sendKeys("89670732919");//ввод телефона
+        webDriver.findElement(fieldNumber).sendKeys(phone);//ввод телефона
 
     }
 

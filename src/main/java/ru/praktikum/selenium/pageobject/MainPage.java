@@ -1,15 +1,11 @@
 package ru.praktikum.selenium.pageobject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import static org.junit.Assert.assertEquals;
 
 public class MainPage {
     public MainPage(WebDriver webDriver) {
-
         this.webDriver = webDriver;
     }
 
@@ -103,48 +99,6 @@ public class MainPage {
 
     public void clickLowerOrderButton() {
         webDriver.findElement(lowerOrderButton).click();
-    }
-
-    String[] texts =
-            {
-                    "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
-                    "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.",
-                    "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.",
-                    "Только начиная с завтрашнего дня. Но скоро станем расторопнее.",
-                    "Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.",
-                    "Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.",
-                    "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.",
-                    "Да, обязательно. Всем самокатов! И Москве, и Московской области.",
-            };
-
-
-    public void scroll() {//проскролить страницу до нижнего элемента
-        WebElement element = webDriver.findElement(By.className("accordion__button"));
-        ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", element);
-    }
-
-    //здесь описаны 2 способа проверки 1-ого задание через метод checkValue, я не знал как правильно и поэтому сделал два варианта, нужно просто один раскоментить, а другой наоборот закоментить
-//    public void checkValue() {
-//        for (int i = 0; i < 8; i = i + 1) { // Объявление цикла и его настройки
-//            By button = By.id("accordion__heading-" + i);
-//            webDriver.findElement(button).click(); // Тело цикла, выполняется при каждой итерации
-//            String text = webDriver.findElement(By.xpath(
-//                    ".//div[@id='accordion__heading-" + i + "']/parent::div/parent::div/div[2]"
-//            )).getText();
-//            assertEquals("текст не верный", texts[i], text);
-//
-//        }
-//    }
-
-
-    public void checkValue() {
-        for (int i = 1; i < 9; i = i + 1) { // Объявление цикла и его настройки
-            String xpath = ".//div[@class='accordion']/div[" + i + "]";
-            webDriver.findElement(By.xpath(xpath + "/div")).click(); // Тело цикла, выполняется при каждой итерации
-            String text = webDriver.findElement(By.xpath(xpath + "/div[2]")).getText();
-            assertEquals("текст не верный", texts[i - 1], text);
-
-        }
     }
 
 }
