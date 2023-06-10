@@ -32,9 +32,9 @@ public class PageRent {
     //окно заказ оформлен
     private By textOrderCompleted = By.xpath(".//div[@class='Order_ModalHeader__3FDaJ']");
     //текст об оформлении заказа
-    private By endButton = By.xpath("webDriver.findElement(textOrderCompleted).isDisplayed();");
+    private By endButton = By.xpath(".//button[contains(text(),'Посмотреть статус')]");
     //кнопка просмотра статуса
-    private By scooterButton = By.xpath("//img[@alt='Scooter']");
+    private By scooterButton = By.xpath(".//img[@alt='Scooter']");
     //кнопка скутера возврата на главную
 
 

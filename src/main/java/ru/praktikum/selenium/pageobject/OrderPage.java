@@ -1,6 +1,5 @@
 package ru.praktikum.selenium.pageobject;
 
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

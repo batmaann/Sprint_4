@@ -10,8 +10,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.praktikum.selenium.pageobject.MainPage;
-import ru.praktikum.selenium.pageobject.OrderPage;
-import ru.praktikum.selenium.pageobject.PageRent;
 import org.openqa. selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
